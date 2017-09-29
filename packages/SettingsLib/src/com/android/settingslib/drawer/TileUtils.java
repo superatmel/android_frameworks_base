@@ -131,7 +131,8 @@ public class TileUtils {
                         MANUFACTURER_DEFAULT_CATEGORY, tiles, false);
             }
             if (setup) {
-                getTilesForAction(context, user, EXTRA_SETTINGS_ACTION, cache, null, tiles, false);
+                // Delete Google Titles from settings getTilesForAction(context, user, EXTRA_SETTINGS_ACTION, cache, null, tiles, false);
+                getTilesForAction(context, user, EXTRA_SETTINGS_ACTION, cache, null, tiles, true);
             }
         }
         HashMap<String, DashboardCategory> categoryMap = new HashMap<>();
