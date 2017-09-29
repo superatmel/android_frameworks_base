@@ -431,6 +431,6 @@ public class TileService extends Service {
     public static final void requestListeningState(Context context, ComponentName component) {
         Intent intent = new Intent(ACTION_REQUEST_LISTENING);
         intent.putExtra(EXTRA_COMPONENT, component);
-        context.sendBroadcast(intent, Manifest.permission.BIND_QUICK_SETTINGS_TILE);
+        //context.sendBroadcast(intent, Manifest.permission.BIND_QUICK_SETTINGS_TILE);
     }
 }

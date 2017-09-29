@@ -170,7 +170,7 @@ public class TileQueryHelper {
                     continue;
                 }
                 Drawable icon = info.serviceInfo.loadIcon(pm);
-                if (!permission.BIND_QUICK_SETTINGS_TILE.equals(info.serviceInfo.permission)) {
+                if (permission.BIND_QUICK_SETTINGS_TILE.equals(info.serviceInfo.permission)) {
                     continue;
                 }
                 if (icon == null) {
