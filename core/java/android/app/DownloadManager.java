@@ -110,17 +110,8 @@ public class DownloadManager {
     public final static String COLUMN_LOCAL_URI = "local_uri";
 
     /**
-     * Path to the downloaded file on disk.
-     * <p>
-     * Note that apps may not have filesystem permissions to directly access
-     * this path. Instead of trying to open this path directly, apps should use
-     * {@link ContentResolver#openFileDescriptor(Uri, String)} to gain access.
-     *
-     * @deprecated apps should transition to using
-     *             {@link ContentResolver#openFileDescriptor(Uri, String)}
-     *             instead.
+     * The pathname of the file where the download is stored.
      */
-    @Deprecated
     public final static String COLUMN_LOCAL_FILENAME = "local_filename";
 
     /**
@@ -1526,19 +1517,8 @@ public class DownloadManager {
 
         @Override
         public String getString(int columnIndex) {
-            final String columnName = getColumnName(columnIndex);
-            switch (columnName) {
-                case COLUMN_LOCAL_URI:
-                    return getLocalUri();
-                case COLUMN_LOCAL_FILENAME:
-                    if (!mAccessFilename) {
-                        throw new SecurityException(
-                                "COLUMN_LOCAL_FILENAME is deprecated;"
-                                        + " use ContentResolver.openFileDescriptor() instead");
-                    }
-                default:
-                    return super.getString(columnIndex);
-            }
+            return (getColumnName(columnIndex).equals(COLUMN_LOCAL_URI)) ? getLocalUri() :
+                    super.getString(columnIndex);
         }
 
         private String getLocalUri() {
