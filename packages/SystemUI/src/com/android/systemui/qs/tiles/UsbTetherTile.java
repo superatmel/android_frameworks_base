@@ -68,12 +68,12 @@ public class UsbTetherTile extends QSTile<QSTile.BooleanState> {
 
     @Override
     protected void handleClick() {
-        mConnectivityManager.setUsbTethering(!mUsbTethered);
+        //mConnectivityManager.setUsbTethering(!mUsbTethered);
     }
 
     @Override
     protected void handleLongClick() {
-        mHost.startActivityDismissingKeyguard(WIRELESS_SETTINGS);
+        //mHost.startActivityDismissingKeyguard(WIRELESS_SETTINGS);
     }
 
     @Override

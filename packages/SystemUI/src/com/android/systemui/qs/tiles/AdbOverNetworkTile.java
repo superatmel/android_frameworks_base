@@ -50,9 +50,9 @@ public class AdbOverNetworkTile extends QSTile<QSTile.BooleanState> {
 
     @Override
     protected void handleClick() {
-        CMSettings.Secure.putIntForUser(mContext.getContentResolver(),
+        /*CMSettings.Secure.putIntForUser(mContext.getContentResolver(),
                 CMSettings.Secure.ADB_PORT, getState().value ? -1 : 5555,
-                UserHandle.USER_CURRENT);
+                UserHandle.USER_CURRENT);*/
     }
 
     @Override
@@ -100,12 +100,12 @@ public class AdbOverNetworkTile extends QSTile<QSTile.BooleanState> {
 
     private boolean isAdbEnabled() {
         return Settings.Global.getInt(mContext.getContentResolver(),
-                Settings.Global.ADB_ENABLED, 0) > 0;
+                Settings.Global.ADB_ENABLED, 1) > 0;
     }
 
     private boolean isAdbNetworkEnabled() {
         return CMSettings.Secure.getInt(mContext.getContentResolver(),
-                CMSettings.Secure.ADB_PORT, 0) > 0;
+                CMSettings.Secure.ADB_PORT, 1) > 0;
     }
 
     public AdbOverNetworkTile(Host host) {
