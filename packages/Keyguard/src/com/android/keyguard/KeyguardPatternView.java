@@ -161,10 +161,10 @@ public class KeyguardPatternView extends LinearLayout implements KeyguardSecurit
         mEcaView = findViewById(R.id.keyguard_selector_fade_container);
         mContainer = (ViewGroup) findViewById(R.id.container);
 
-        EmergencyButton button = (EmergencyButton) findViewById(R.id.emergency_call_button);
+        /*EmergencyButton button = (EmergencyButton) findViewById(R.id.emergency_call_button);
         if (button != null) {
             button.setCallback(this);
-        }
+        }*/
     }
 
     @Override

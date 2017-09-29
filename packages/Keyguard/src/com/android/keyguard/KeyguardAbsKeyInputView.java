@@ -98,10 +98,10 @@ public abstract class KeyguardAbsKeyInputView extends LinearLayout
         mMaxCountdownTimes = mContext.getResources()
                 .getInteger(R.integer.config_max_unlock_countdown_times);
 
-        EmergencyButton button = (EmergencyButton) findViewById(R.id.emergency_call_button);
+        /*EmergencyButton button = (EmergencyButton) findViewById(R.id.emergency_call_button);
         if (button != null) {
             button.setCallback(this);
-        }
+        }*/
     }
 
     @Override
